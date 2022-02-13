@@ -7,63 +7,12 @@ using System.Threading.Tasks;
 
 namespace SampleApp.ViewModel
 {
-    public class ViewModel:INotifyPropertyChanged
+    public class ViewModel
     {
-        private string m_firstName;
-        private string m_LastName;
-
+        public string Text { get; set; }
         public ViewModel()
         {
-            FirstName = "Deepti";
-            LastName = "Gupta";
-            Console.WriteLine(FirstName);
-        }
-
-
-        public string FirstName
-        {
-            get
-            {
-                return m_firstName;
-            }
-            set
-            {
-                m_firstName = value;
-                OnPropertyChanged(nameof(FirstName));
-                OnPropertyChanged(nameof(FullName));
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                return m_LastName;
-            }
-            set
-            {
-                m_LastName = value;
-                OnPropertyChanged(nameof(LastName));
-                OnPropertyChanged(nameof(FullName));
-            }
-        }
-        
-        public string FullName
-        {
-            get
-            {
-                return FirstName + " " + LastName;
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        protected void OnPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
+            Text = "Deepti";
         }
     }
 }

@@ -12,10 +12,7 @@
     </Window.DataContext>
     <Grid>
         <StackPanel>
-            <TextBox Height="50" FontSize="40" Text="{Binding Path=FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <TextBox Height="50" FontSize="40" Text="{Binding Path=LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
-            <Button Height="50" FontSize="40" Content="Enter"/>
-            <TextBlock Height="50" FontSize="40" Text="{Binding Path=FullName}" />
+            <TextBlock Height="50" FontSize="40" Text="{Binding Path=Text}" />
         </StackPanel>
     </Grid>
 </Window>
