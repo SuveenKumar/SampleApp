@@ -3,16 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SampleApp"
-        xmlns:ViewModel="clr-namespace:SampleApp.ViewModel" x:Class="SampleApp.MainWindow"
+        xmlns:local="clr-namespace:SampleApp" x:Class="SampleApp.MainWindow"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="400">
-    <Window.DataContext>
-        <ViewModel:ViewModel/>
-    </Window.DataContext>
     <Grid>
-        <StackPanel>
-            <TextBlock Height="50" FontSize="40" Text="{Binding Path=Text}" />
-        </StackPanel>
+        <TextBlock Height="Auto" Text="Zoom" Width="Auto" FontSize="{Binding ElementName=sl,Path=Value}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Slider IsSnapToTickEnabled="True" x:Name="sl" Value="20" Minimum="0" Maximum="100" Height="20" VerticalAlignment="Bottom" Margin="0,0,0,76"/>
+        <TextBlock FontSize="20" Height="Auto" Width="Auto" Text="{Binding ElementName=sl,Path=Value}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="181,0,0,27"/>
     </Grid>
 </Window>
